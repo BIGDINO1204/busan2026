@@ -403,6 +403,23 @@
   }
   .info-banner strong { color: var(--sea); }
 
+  /* ── QUICK BTN ── */
+  .quick-btn {
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: 1.5px solid var(--sea);
+    background: transparent;
+    color: var(--sea);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Noto Sans TC', sans-serif;
+    transition: all 0.15s;
+  }
+  .quick-btn:active { background: var(--sea); color: white; }
+  .quick-btn.coral-quick { border-color: var(--coral); color: var(--coral); }
+  .quick-btn.coral-quick:active { background: var(--coral); color: white; }
+
   /* ── REMIND ITEM ── */
   .remind-item {
     display: flex;
@@ -643,7 +660,7 @@
       <div class="tl-item">
         <div class="tl-left"><div class="tl-time">09:00</div><div class="tl-dot coral"></div><div class="tl-line"></div></div>
         <div class="tl-right"><div class="tl-card highlight"><div class="tl-name">🛒 樂天超市光復店掃貨</div><div class="tl-desc">09:00 開門，零食・泡麵・美妝・伴手禮全在這！帶著購物袋來，記得退稅</div><div class="tl-tags"><span class="tag tag-shop">必逛</span><span class="tag tag-shop">伴手禮</span></div>
-        <a class="map-btn coral-btn" href="https://maps.app.goo.gl/X9VSSBMaH6hWEjFo7" target="_blank">📍 樂天超市光復店</a></div></div>
+        <a class="map-btn coral-btn" href="https://map.naver.com/p/search/%EB%A1%AF%EB%8D%B0%EB%A7%88%ED%8A%B8%20%EA%B4%91%EB%B3%B5%EC%A0%90/place/11625524" target="_blank">📍 樂天超市光復店</a></div></div>
       </div>
       <div class="tl-item">
         <div class="tl-left"><div class="tl-time">10:30</div><div class="tl-dot"></div><div class="tl-line"></div></div>
@@ -656,12 +673,12 @@
       <div class="tl-item">
         <div class="tl-left"><div class="tl-time">13:00</div><div class="tl-dot coral"></div><div class="tl-line"></div></div>
         <div class="tl-right"><div class="tl-card highlight"><div class="tl-name">🧖 新世界 Spa Land 汗蒸幕</div><div class="tl-desc">頂級汗蒸幕！₩18,000（平日）/ ₩22,000（週六）。停留約 <strong>3–4 小時</strong>。<strong>⚠️ 7/25 週六，建議提前訂票！</strong></div><div class="tl-tags"><span class="tag tag-spa">必去</span><span class="tag tag-spa">汗蒸幕</span></div>
-        <a class="map-btn coral-btn" href="https://maps.app.goo.gl/YzV8MerEWFZ6zDoq5" target="_blank">📍 新世界 Spa Land</a></div></div>
+        <a class="map-btn coral-btn" href="https://map.naver.com/p/search/%EC%8B%A0%EC%84%B8%EA%B3%84%20%EC%8A%A4%ED%8C%8C%EB%9E%9C%EB%93%9C%20%EC%84%BC%ED%85%80%EC%8B%9C%ED%8B%B0/place/33995138" target="_blank">📍 新世界 Spa Land</a></div></div>
       </div>
       <div class="tl-item">
         <div class="tl-left"><div class="tl-time">17:00</div><div class="tl-dot"></div><div class="tl-line"></div></div>
         <div class="tl-right"><div class="tl-card"><div class="tl-name">🛍 新世界百貨逛逛・退稅辦理</div><div class="tl-desc">3F 外國人服務中心辦會員卡，首次辦卡送 2 杯飲品 🥤，購物享 95 折</div><div class="tl-tags"><span class="tag tag-shop">購物</span><span class="tag tag-shop">退稅</span></div>
-        <a class="map-btn" href="https://maps.app.goo.gl/bZHDYdWdMr2BuZDf9" target="_blank">📍 新世界百貨</a></div></div>
+        <a class="map-btn" href="https://map.naver.com/p/search/%EC%8B%A0%EC%84%B8%EA%B3%84%EB%B0%B1%ED%99%94%EC%A0%90%20%EC%84%BC%ED%85%80%EC%8B%9C%ED%8B%B0%EC%A0%90/place/11619204" target="_blank">📍 新世界百貨</a></div></div>
       </div>
       <div class="tl-item">
         <div class="tl-left"><div class="tl-time">17:30</div><div class="tl-dot coral"></div><div class="tl-line"></div></div>
@@ -834,7 +851,7 @@
     <div class="hotel-detail">📅 退房：7/25（六）Check-out（行李寄放到下午）</div>
     <div class="hotel-detail">🍳 早餐：附贈，每天吃！</div>
     <div style="margin-top:12px">
-      <a class="map-btn" href="https://maps.app.goo.gl/U8gSJgqBdUL1cqZa8" target="_blank" style="background:rgba(255,255,255,0.25);border:1px solid rgba(255,255,255,0.4)">📍 飯店位置</a>
+      <a class="map-btn" href="https://map.naver.com/p/search/%ED%86%A0%EC%9A%94%EC%BD%94%EC%9D%B8%20%EB%B6%80%EC%82%B0%EC%A4%91%EC%95%99%EC%97%AD/place/1143945080" target="_blank" style="background:rgba(255,255,255,0.25);border:1px solid rgba(255,255,255,0.4)">📍 飯店位置</a>
     </div>
   </div>
   <div class="card">
@@ -842,29 +859,29 @@
     <div class="transport-row">
       <div class="transport-icon">🗼</div>
       <div class="transport-info"><div class="transport-route">釜山塔・龍頭山公園</div><div class="transport-detail">步行 10 分鐘</div></div>
-      <a class="map-btn" href="https://maps.app.goo.gl/ZKqcXsA1rAnJVf4P7" target="_blank" style="align-self:center;padding:5px 10px;font-size:11px">導航</a>
+      <a class="map-btn" href="https://map.naver.com/p/search/%EB%B6%80%EC%82%B0%ED%83%80%EC%9B%8C/place/11582198" target="_blank" style="align-self:center;padding:5px 10px;font-size:11px">導航</a>
     </div>
     <div class="transport-row">
       <div class="transport-icon">🐟</div>
       <div class="transport-info"><div class="transport-route">札嘎其海鮮市場</div><div class="transport-detail">步行 15 分鐘</div></div>
-      <a class="map-btn" href="https://maps.app.goo.gl/E4Ss3CwRiuuHhqcB9" target="_blank" style="align-self:center;padding:5px 10px;font-size:11px">導航</a>
+      <a class="map-btn" href="https://map.naver.com/p/search/%EC%9E%90%EA%B0%88%EC%B9%98%EC%8B%9C%EC%9E%A5/place/11582217" target="_blank" style="align-self:center;padding:5px 10px;font-size:11px">導航</a>
     </div>
     <div class="transport-row">
       <div class="transport-icon">🎬</div>
       <div class="transport-info"><div class="transport-route">BIFF廣場</div><div class="transport-detail">步行 10 分鐘</div></div>
-      <a class="map-btn" href="https://maps.app.goo.gl/r1EqAr2kSzMGzc5b9" target="_blank" style="align-self:center;padding:5px 10px;font-size:11px">導航</a>
+      <a class="map-btn" href="https://map.naver.com/p/search/BIFF%EA%B4%91%EC%9E%A5/place/11582232" target="_blank" style="align-self:center;padding:5px 10px;font-size:11px">導航</a>
     </div>
     <div class="transport-row">
       <div class="transport-icon">🛒</div>
       <div class="transport-info"><div class="transport-route">樂天超市光復店</div><div class="transport-detail">步行 15 分鐘</div></div>
-      <a class="map-btn" href="https://maps.app.goo.gl/X9VSSBMaH6hWEjFo7" target="_blank" style="align-self:center;padding:5px 10px;font-size:11px">導航</a>
+      <a class="map-btn" href="https://map.naver.com/p/search/%EB%A1%AF%EB%8D%B0%EB%A7%88%ED%8A%B8%20%EA%B4%91%EB%B3%B5%EC%A0%90/place/11625524" target="_blank" style="align-self:center;padding:5px 10px;font-size:11px">導航</a>
     </div>
   </div>
   <div class="card">
     <div class="card-title">⚠️ 重要提醒</div>
     <div class="remind-item"><div class="remind-icon">🧳</div><div>7/25 退房後，行李寄放在飯店前台，下午去 Spa Land 前記得回來取行李再去機場</div></div>
     <div class="remind-item"><div class="remind-icon">💳</div><div>東橫INN 通常需要信用卡 or 現金 Check-in 時押金，請備妥</div></div>
-    <div class="remind-item"><div class="remind-icon">🔑</div><div>中央站出口離飯店步行約 5–8 分鐘，Google Map 導航即可</div></div>
+    <div class="remind-item"><div class="remind-icon">🔑</div><div>中央站出口離飯店步行約 5–8 分鐘，Naver Map 導航即可</div></div>
   </div>
 </div>
 
@@ -906,9 +923,6 @@
       </div>
       <div class="pack-item" onclick="togglePack(this)">
         <div class="pack-check"></div><span class="pack-emoji">👟</span><span class="pack-text">舒適好走的鞋（甘川洞坡路多）</span>
-      </div>
-      <div class="pack-item" onclick="togglePack(this)">
-        <div class="pack-check"></div><span class="pack-emoji">👙</span><span class="pack-text">泳衣（海雲台可以玩水）</span>
       </div>
     </div>
 
@@ -969,66 +983,73 @@
   </div>
 </div>
 
-<!-- ⑤ 預算 -->
+<!-- ⑤ 匯率計算機 -->
 <div class="section" id="sec-budget">
-  <div class="section-title">💰 旅遊預算</div>
-  <div class="budget-total">
-    <div class="budget-label">每人總預算（不含機票住宿）</div>
-    <div class="budget-amount">NT$10,000</div>
-    <div class="budget-label">5人合計約 NT$50,000</div>
+  <div class="section-title">💱 匯率計算機</div>
+
+  <div class="budget-total" style="padding:20px">
+    <div class="budget-label" style="font-size:13px;margin-bottom:6px">固定匯率</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:#4AAEDC;line-height:1">₩1,000 = NT$46</div>
+    <div class="budget-label" style="margin-top:4px">韓幣 → 台幣</div>
   </div>
 
-  <div class="card">
-    <div class="card-title">📊 每人費用明細估算</div>
-    <div class="budget-row">
-      <div class="budget-cat">🍽 餐飲（4天全部）</div>
-      <div class="budget-val">NT$3,500–4,500</div>
+  <!-- KRW → TWD -->
+  <div class="card" style="margin-bottom:12px">
+    <div class="card-title">🇰🇷 韓幣 → 台幣</div>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+      <div style="flex:1;position:relative">
+        <input id="krw-input" type="number" inputmode="numeric" placeholder="輸入韓幣金額"
+          style="width:100%;padding:14px 48px 14px 16px;border:1.5px solid var(--border);border-radius:12px;font-size:18px;font-family:'Space Grotesk',sans-serif;color:var(--ink);background:var(--page-bg);outline:none;-webkit-appearance:none"
+          oninput="calcKRW()" onfocus="this.style.borderColor='var(--sea)'" onblur="this.style.borderColor='var(--border)'">
+        <span style="position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:16px;color:var(--muted);font-weight:600">₩</span>
+      </div>
     </div>
-    <div class="budget-row">
-      <div class="budget-cat">🚇 交通（地鐵+公車）</div>
-      <div class="budget-val">NT$600–700</div>
+    <div style="background:var(--wave-blue);border-radius:12px;padding:16px;text-align:center">
+      <div style="font-size:12px;color:var(--muted);margin-bottom:4px">換算結果</div>
+      <div id="twd-result" style="font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;color:var(--sea)">NT$ —</div>
     </div>
-    <div class="budget-row">
-      <div class="budget-cat">🎫 景點門票</div>
-      <div class="budget-val">NT$1,500–2,000</div>
-    </div>
-    <div class="budget-row">
-      <div class="budget-cat">🚢 遊艇</div>
-      <div class="budget-val">NT$600–800</div>
-    </div>
-    <div class="budget-row">
-      <div class="budget-cat">🧖 Spa Land</div>
-      <div class="budget-val">NT$420–520</div>
-    </div>
-    <div class="budget-row">
-      <div class="budget-cat">☕ 小吃・咖啡・零食</div>
-      <div class="budget-val">NT$800–1,000</div>
-    </div>
-    <div class="budget-row" style="font-weight:700">
-      <div class="budget-cat" style="color:var(--ink);font-weight:700">💡 旅遊合計</div>
-      <div class="budget-val" style="color:var(--sea)">NT$7,420–9,520</div>
-    </div>
-    <div class="budget-row" style="background:#FEF9EC;border-radius:8px;padding:10px;margin-top:4px;border-bottom:none">
-      <div class="budget-cat">🛍 剩餘購物預算</div>
-      <div class="budget-val" style="color:var(--coral)">NT$480–2,580</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+      <button class="quick-btn" onclick="setKRW(10000)">₩1萬</button>
+      <button class="quick-btn" onclick="setKRW(50000)">₩5萬</button>
+      <button class="quick-btn" onclick="setKRW(100000)">₩10萬</button>
+      <button class="quick-btn" onclick="setKRW(500000)">₩50萬</button>
     </div>
   </div>
 
-  <div class="card">
-    <div class="card-title">🎫 釜山 Pass 值得買嗎？</div>
-    <div class="info-banner" style="margin-bottom:0">
-      你們行程包含：<strong>海岸列車 ✅ 松島纜車 ✅ 釜山塔 ✅</strong><br><br>
-      單買門票約 NT$1,600–2,000/人，<strong>釜山 Pass 48 小時版</strong>通常 NT$800–1,000 左右就包含這些，<strong>強烈建議購買！</strong><br><br>
-      → 在 KLOOK 或 KKDAY 出發前購買，通常比現場便宜 15%
+  <!-- TWD → KRW -->
+  <div class="card" style="margin-bottom:12px">
+    <div class="card-title">🇹🇼 台幣 → 韓幣</div>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+      <div style="flex:1;position:relative">
+        <input id="twd-input" type="number" inputmode="numeric" placeholder="輸入台幣金額"
+          style="width:100%;padding:14px 52px 14px 16px;border:1.5px solid var(--border);border-radius:12px;font-size:18px;font-family:'Space Grotesk',sans-serif;color:var(--ink);background:var(--page-bg);outline:none;-webkit-appearance:none"
+          oninput="calcTWD()" onfocus="this.style.borderColor='var(--coral)'" onblur="this.style.borderColor='var(--border)'">
+        <span style="position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:16px;color:var(--muted);font-weight:600">NT$</span>
+      </div>
+    </div>
+    <div style="background:#FFF8F6;border:1px solid #F5C6BB;border-radius:12px;padding:16px;text-align:center">
+      <div style="font-size:12px;color:var(--muted);margin-bottom:4px">換算結果</div>
+      <div id="krw-result" style="font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;color:var(--coral)">₩ —</div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+      <button class="quick-btn coral-quick" onclick="setTWD(500)">NT$500</button>
+      <button class="quick-btn coral-quick" onclick="setTWD(1000)">NT$1,000</button>
+      <button class="quick-btn coral-quick" onclick="setTWD(3000)">NT$3,000</button>
+      <button class="quick-btn coral-quick" onclick="setTWD(5000)">NT$5,000</button>
     </div>
   </div>
 
+  <!-- 常見消費對照 -->
   <div class="card">
-    <div class="card-title">💱 換匯建議</div>
-    <div class="remind-item"><div class="remind-icon">✅</div><div>建議在台灣銀行或機場換好部分韓幣（每人至少 ₩200,000）</div></div>
-    <div class="remind-item"><div class="remind-icon">💡</div><div>釜山機場輕軌站旁有 MONEY BOX 自助換錢機，匯率比機場大廳好很多，營業 06:00–21:00</div></div>
-    <div class="remind-item"><div class="remind-icon">💡</div><div>南浦洞光復路有大量民間換錢所，匯率通常是最好的，建議留一些在南浦洞換</div></div>
-    <div class="remind-item"><div class="remind-icon">💳</div><div>大部分景點、餐廳、百貨可刷 Visa/Master，市場小攤位才需現金</div></div>
+    <div class="card-title">🧾 常見消費參考</div>
+    <div class="budget-row"><div class="budget-cat">🚇 地鐵一次</div><div class="budget-val">₩1,400 ≈ NT$64</div></div>
+    <div class="budget-row"><div class="budget-cat">🍜 刀削麵一碗</div><div class="budget-val">₩12,000 ≈ NT$552</div></div>
+    <div class="budget-row"><div class="budget-cat">🥤 便利商店飲料</div><div class="budget-val">₩2,000 ≈ NT$92</div></div>
+    <div class="budget-row"><div class="budget-cat">🚃 海岸列車</div><div class="budget-val">₩12,000 ≈ NT$552</div></div>
+    <div class="budget-row"><div class="budget-cat">🚡 松島纜車（透明）</div><div class="budget-val">₩18,000 ≈ NT$828</div></div>
+    <div class="budget-row"><div class="budget-cat">🧖 Spa Land（週六）</div><div class="budget-val">₩22,000 ≈ NT$1,012</div></div>
+    <div class="budget-row"><div class="budget-cat">🚢 遊艇</div><div class="budget-val">₩30,000 ≈ NT$1,380</div></div>
+    <div class="budget-row" style="border-bottom:none"><div class="budget-cat">🦀 帝王蟹（每人估）</div><div class="budget-val">₩50,000 ≈ NT$2,300</div></div>
   </div>
 </div>
 
@@ -1047,11 +1068,39 @@
     <span class="icon">🧳</span><span class="label">行李</span>
   </button>
   <button class="nav-btn" onclick="showSection('budget', this)">
-    <span class="icon">💰</span><span class="label">預算</span>
+    <span class="icon">💱</span><span class="label">匯率</span>
   </button>
 </nav>
 
 <script>
+  const RATE = 46; // ₩1000 = NT$46
+
+  function calcKRW() {
+    const krw = parseFloat(document.getElementById('krw-input').value);
+    const el = document.getElementById('twd-result');
+    if (isNaN(krw) || krw === 0) { el.textContent = 'NT$ —'; return; }
+    const twd = (krw / 1000 * RATE).toFixed(0);
+    el.textContent = 'NT$ ' + Number(twd).toLocaleString();
+  }
+
+  function calcTWD() {
+    const twd = parseFloat(document.getElementById('twd-input').value);
+    const el = document.getElementById('krw-result');
+    if (isNaN(twd) || twd === 0) { el.textContent = '₩ —'; return; }
+    const krw = Math.round(twd / RATE * 1000);
+    el.textContent = '₩ ' + krw.toLocaleString();
+  }
+
+  function setKRW(val) {
+    document.getElementById('krw-input').value = val;
+    calcKRW();
+  }
+
+  function setTWD(val) {
+    document.getElementById('twd-input').value = val;
+    calcTWD();
+  }
+
   function showSection(id, btn) {
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
     document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
