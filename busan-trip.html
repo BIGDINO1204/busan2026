@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>🇰🇷 釜山家族旅行 2025</title>
+<title>🇰🇷 釜山 2026</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Grotesk:wght@400;600;700&display=swap');
 
@@ -30,16 +30,24 @@
     background: var(--page-bg);
     color: var(--ink);
     min-height: 100vh;
-    padding-bottom: 80px;
+    padding-bottom: 24px;
     font-size: 15px;
   }
 
   /* ── HERO ── */
   .hero {
-    background: linear-gradient(160deg, var(--sea) 0%, var(--sea-light) 55%, #4AAEDC 100%);
+    background: linear-gradient(135deg, #FF7E5F 0%, #E8614A 22%, #1A5C8A 62%, #0E3A5C 100%);
     padding: 36px 20px 32px;
     position: relative;
     overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 180px; height: 180px;
+    background: radial-gradient(circle, rgba(255,214,102,0.55) 0%, rgba(255,214,102,0) 70%);
+    pointer-events: none;
   }
   .hero::before {
     content: '';
@@ -83,35 +91,41 @@
     font-weight: 500;
     backdrop-filter: blur(4px);
   }
+  .chip-clickable { cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+  .chip-clickable:active { background: rgba(255,255,255,0.3); }
 
   /* ── NAV ── */
-  .bottom-nav {
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
+  .top-nav {
+    position: sticky;
+    top: 0; left: 0; right: 0;
     background: var(--white);
-    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
     display: flex;
+    flex-wrap: wrap;
     z-index: 100;
-    box-shadow: 0 -4px 16px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
   }
   .nav-btn {
-    flex: 1;
+    flex: 1 1 25%;
+    min-width: 25%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px 4px 8px;
+    padding: 14px 4px 12px;
     border: none;
+    border-bottom: 1px solid var(--border);
     background: transparent;
     cursor: pointer;
-    gap: 3px;
-    transition: color 0.18s;
+    gap: 5px;
+    transition: color 0.18s, background 0.18s;
     color: var(--muted);
     font-family: 'Noto Sans TC', sans-serif;
   }
-  .nav-btn.active { color: var(--sea); }
-  .nav-btn .icon { font-size: 20px; line-height: 1; }
-  .nav-btn .label { font-size: 10px; font-weight: 500; }
+  .nav-btn:active { background: var(--wave-blue); }
+  .nav-btn.active { color: var(--sea); background: var(--wave-blue); }
+  .nav-btn .icon { font-size: 24px; line-height: 1; }
+  .nav-btn .label { font-size: 12px; font-weight: 600; }
 
   /* ── SECTIONS ── */
   .section { display: none; padding: 16px 16px 0; }
@@ -403,6 +417,41 @@
   }
   .info-banner strong { color: var(--sea); }
 
+  /* ── FOOD REGION SELECT ── */
+  .region-select-wrap { margin-bottom: 14px; }
+  .region-select {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1.5px solid var(--sea);
+    background: var(--white) url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='18' height='18' fill='none' stroke='%231A5C8A' stroke-width='2'%3e%3cpath d='M6 9l6 6 6-6'/%3e%3c/svg%3e") no-repeat right 14px center;
+    color: var(--sea);
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'Noto Sans TC', sans-serif;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+  }
+  .food-card { margin-bottom: 12px; }
+
+  /* ── QUICK BTN ── */
+  .quick-btn {
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: 1.5px solid var(--sea);
+    background: transparent;
+    color: var(--sea);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Noto Sans TC', sans-serif;
+    transition: all 0.15s;
+  }
+  .quick-btn:active { background: var(--sea); color: white; }
+  .quick-btn.coral-quick { border-color: var(--coral); color: var(--coral); }
+  .quick-btn.coral-quick:active { background: var(--coral); color: white; }
+
   /* ── REMIND ITEM ── */
   .remind-item {
     display: flex;
@@ -442,14 +491,38 @@
 <div class="hero">
   <div class="hero-waves">🌊 🌊 🌊</div>
   <div class="hero-flag">🇰🇷</div>
-  <div class="hero-title">釜山家族旅行</div>
-  <div class="hero-subtitle">2025 / 07 / 22 – 07 / 25 ・ 釜山四天三夜</div>
+  <div class="hero-title">釜山 2026</div>
+  <div class="hero-subtitle">2026 / 07 / 22 – 07 / 25 ・ 釜山四天三夜</div>
   <div class="hero-chips">
-    <span class="chip">✈️ 7C 6152 / ZE 987</span>
-    <span class="chip">🏨 東橫INN 中央站</span>
-    <span class="chip">👥 一家五口</span>
+    <span class="chip chip-clickable" onclick="jumpToTransport()">✈️ 濟州航空 7C 6152 / 易斯達航空 ZE 987</span>
+    <span class="chip chip-clickable" onclick="window.open('https://naver.me/F2ZbDfjE','_blank')">🏨 東橫INN 中央站</span>
   </div>
 </div>
+
+<!-- TOP NAV -->
+<nav class="top-nav">
+  <button class="nav-btn active" onclick="showSection('itinerary', this)">
+    <span class="icon">📅</span><span class="label">行程</span>
+  </button>
+  <button class="nav-btn" onclick="showSection('transport', this)">
+    <span class="icon">🚇</span><span class="label">交通</span>
+  </button>
+  <button class="nav-btn" onclick="showSection('hotel', this)">
+    <span class="icon">🏨</span><span class="label">住宿</span>
+  </button>
+  <button class="nav-btn" onclick="showSection('food', this)">
+    <span class="icon">🍽</span><span class="label">美食</span>
+  </button>
+  <button class="nav-btn" onclick="showSection('sights', this)">
+    <span class="icon">🗺</span><span class="label">景點</span>
+  </button>
+  <button class="nav-btn" onclick="showSection('packing', this)">
+    <span class="icon">🧳</span><span class="label">行李</span>
+  </button>
+  <button class="nav-btn" onclick="showSection('budget', this)">
+    <span class="icon">💱</span><span class="label">匯率</span>
+  </button>
+</nav>
 
 <!-- SECTIONS -->
 
@@ -467,7 +540,7 @@
     <div class="flight-banner">
       <div class="flight-icon">✈️</div>
       <div class="flight-info">
-        <div class="flight-code">7C 6152</div>
+        <div class="flight-code">濟州航空 7C 6152</div>
         <div class="flight-route">TPE 12:00 → PUS 15:30（韓國時間）</div>
       </div>
     </div>
@@ -478,7 +551,7 @@
       </div>
       <div class="tl-item">
         <div class="tl-left"><div class="tl-time">15:30</div><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-right"><div class="tl-card transport"><div class="tl-name">🛬 抵達金海國際機場</div><div class="tl-desc">入境、領行李、在機場 CU 購買/儲值 T-money 卡（建議每人儲 ₩50,000 起）<br>輕軌機場站在國際線出口對面，步行約 5 分鐘</div><div class="tl-tags"><span class="tag tag-transport">輕軌→地鐵</span></div></div></div>
+        <div class="tl-right"><div class="tl-card transport"><div class="tl-name">🛬 抵達金海國際機場</div><div class="tl-desc">入境、領行李、在機場 CU 購買/儲值 T-money 卡（建議每人儲 ₩20,000–30,000 起，不夠再加值即可）<br>輕軌機場站在國際線出口對面，步行約 5 分鐘</div><div class="tl-tags"><span class="tag tag-transport">輕軌→地鐵</span></div></div></div>
       </div>
       <div class="tl-item">
         <div class="tl-left"><div class="tl-time">15:30<br>↓<br>17:30</div><div class="tl-dot"></div><div class="tl-line"></div></div>
@@ -487,22 +560,26 @@
       <div class="tl-item">
         <div class="tl-left"><div class="tl-time">17:30</div><div class="tl-dot green"></div><div class="tl-line"></div></div>
         <div class="tl-right"><div class="tl-card"><div class="tl-name">🏨 東橫INN 釜山中央站 Check-in</div><div class="tl-desc">放行李、換裝、稍作休息</div>
-        <a class="map-btn" href="https://map.naver.com/p/search/토요코인%20부산%20중앙역/place/1143945080" target="_blank">📍 導航到飯店</a></div></div>
+        <a class="map-btn" href="https://naver.me/F2ZbDfjE" target="_blank">📍 導航到飯店</a></div></div>
       </div>
       <div class="tl-item">
-        <div class="tl-left"><div class="tl-time">18:30</div><div class="tl-dot coral"></div><div class="tl-line"></div></div>
-        <div class="tl-right"><div class="tl-card highlight"><div class="tl-name">🦀 晚餐：참바다대게 남포동본점</div><div class="tl-desc">帝王蟹！論重計價，5人點 5–6kg 吃到爽，飯店步行可達</div><div class="tl-tags"><span class="tag tag-food">必吃</span><span class="tag tag-food">帝王蟹</span></div>
+        <div class="tl-left"><div class="tl-time">17:50</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div class="tl-right"><div class="tl-card transport"><div class="tl-name">🚌 飯店 → 南浦洞</div><div class="tl-desc">中央站周邊搭公車到南浦洞，約 <strong>10–15 分鐘</strong>（用 Naver Map 查即時公車路線）</div><div class="tl-tags"><span class="tag tag-transport">₩1,200/人</span></div></div></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-time">18:00</div><div class="tl-dot coral"></div><div class="tl-line"></div></div>
+        <div class="tl-right"><div class="tl-card highlight"><div class="tl-name">🦀 晚餐：참바다대게 남포동본점</div><div class="tl-desc">帝王蟹吃到飽！5人吃到爽，南浦洞逛街順路</div><div class="tl-tags"><span class="tag tag-food">必吃</span><span class="tag tag-food">帝王蟹</span></div>
         <a class="map-btn coral-btn" href="https://map.naver.com/p/search/%EC%B0%B8%EB%B0%94%EB%8B%A4%EB%8C%80%EA%B2%8C%20%EB%82%A8%ED%8F%AC%EB%8F%99%EB%B3%B8%EC%A0%90/place/37683771" target="_blank">📍 導航到餐廳</a></div></div>
       </div>
       <div class="tl-item">
         <div class="tl-left"><div class="tl-time">20:00</div><div class="tl-dot"></div><div class="tl-line"></div></div>
         <div class="tl-right"><div class="tl-card"><div class="tl-name">🗼 釜山塔夜景 + 龍頭山公園</div><div class="tl-desc">從光復路手扶梯直達，晚上 20:00–22:00 有窗口煙火投影秀，每 15 分鐘一次。開放至 22:00，門票 ₩12,000（釜山 Pass 免費）</div><div class="tl-tags"><span class="tag tag-sight">夜景</span></div>
-        <a class="map-btn" href="https://map.naver.com/p/search/%EB%B6%80%EC%82%B0%ED%83%80%EC%9B%8C/place/11582198" target="_blank">📍 導航到釜山塔</a></div></div>
+        <a class="map-btn" href="https://naver.me/GbDFYSR5" target="_blank">📍 導航到釜山塔</a></div></div>
       </div>
       <div class="tl-item">
         <div class="tl-left"><div class="tl-time">21:30</div><div class="tl-dot"></div><div class="tl-line"></div></div>
         <div class="tl-right"><div class="tl-card"><div class="tl-name">🛍 南浦洞逛街・BIFF廣場</div><div class="tl-desc">元祖糖餅、魚糕串小吃、光復路時尚街購物。大創南浦店也在這裡，順路可逛</div><div class="tl-tags"><span class="tag tag-shop">逛街</span><span class="tag tag-food">小吃</span></div>
-        <a class="map-btn" href="https://map.naver.com/p/search/BIFF%EA%B4%91%EC%9E%A5/place/11582232" target="_blank">📍 BIFF廣場</a></div></div>
+        <a class="map-btn" href="https://naver.me/FDnCfOLW" target="_blank">📍 BIFF廣場</a></div></div>
       </div>
     </div>
   </div>
@@ -532,7 +609,7 @@
       <div class="tl-item">
         <div class="tl-left"><div class="tl-time">12:30</div><div class="tl-dot coral"></div><div class="tl-line"></div></div>
         <div class="tl-right"><div class="tl-card highlight"><div class="tl-name">🍜 午餐：松亭 31cm 海鮮刀削麵</div><div class="tl-desc">海鮮超豐盛的大碗刀削麵，松亭站步行可達，人氣名店</div><div class="tl-tags"><span class="tag tag-food">必吃</span><span class="tag tag-food">海鮮</span></div>
-        <a class="map-btn coral-btn" href="https://map.naver.com/p/search/%EC%86%A1%EC%A0%95%2031cm%20%EC%B0%B8%EB%B0%94%EB%8B%A4%EC%B9%BC%EA%B5%AD%EC%88%98" target="_blank">📍 導航到餐廳</a></div></div>
+        <a class="map-btn coral-btn" href="https://naver.me/Gsj2g76E" target="_blank">📍 導航到餐廳</a></div></div>
       </div>
       <div class="tl-item">
         <div class="tl-left"><div class="tl-time">14:00</div><div class="tl-dot"></div><div class="tl-line"></div></div>
@@ -631,7 +708,7 @@
     <div class="flight-banner">
       <div class="flight-icon">✈️</div>
       <div class="flight-info">
-        <div class="flight-code">ZE 987</div>
+        <div class="flight-code">易斯達航空 ZE 987</div>
         <div class="flight-route">PUS 22:10 → TPE 00:15（7/26）</div>
       </div>
     </div>
@@ -643,7 +720,7 @@
       <div class="tl-item">
         <div class="tl-left"><div class="tl-time">09:00</div><div class="tl-dot coral"></div><div class="tl-line"></div></div>
         <div class="tl-right"><div class="tl-card highlight"><div class="tl-name">🛒 樂天超市光復店掃貨</div><div class="tl-desc">09:00 開門，零食・泡麵・美妝・伴手禮全在這！帶著購物袋來，記得退稅</div><div class="tl-tags"><span class="tag tag-shop">必逛</span><span class="tag tag-shop">伴手禮</span></div>
-        <a class="map-btn coral-btn" href="https://maps.app.goo.gl/X9VSSBMaH6hWEjFo7" target="_blank">📍 樂天超市光復店</a></div></div>
+        <a class="map-btn coral-btn" href="https://map.naver.com/p/search/%EB%A1%AF%EB%8D%B0%EB%A7%88%ED%8A%B8%20%EA%B4%91%EB%B3%B5%EC%A0%90/place/11625524" target="_blank">📍 樂天超市光復店</a></div></div>
       </div>
       <div class="tl-item">
         <div class="tl-left"><div class="tl-time">10:30</div><div class="tl-dot"></div><div class="tl-line"></div></div>
@@ -656,12 +733,12 @@
       <div class="tl-item">
         <div class="tl-left"><div class="tl-time">13:00</div><div class="tl-dot coral"></div><div class="tl-line"></div></div>
         <div class="tl-right"><div class="tl-card highlight"><div class="tl-name">🧖 新世界 Spa Land 汗蒸幕</div><div class="tl-desc">頂級汗蒸幕！₩18,000（平日）/ ₩22,000（週六）。停留約 <strong>3–4 小時</strong>。<strong>⚠️ 7/25 週六，建議提前訂票！</strong></div><div class="tl-tags"><span class="tag tag-spa">必去</span><span class="tag tag-spa">汗蒸幕</span></div>
-        <a class="map-btn coral-btn" href="https://maps.app.goo.gl/YzV8MerEWFZ6zDoq5" target="_blank">📍 新世界 Spa Land</a></div></div>
+        <a class="map-btn coral-btn" href="https://map.naver.com/p/search/%EC%8B%A0%EC%84%B8%EA%B3%84%20%EC%8A%A4%ED%8C%8C%EB%9E%9C%EB%93%9C%20%EC%84%BC%ED%85%80%EC%8B%9C%ED%8B%B0/place/33995138" target="_blank">📍 新世界 Spa Land</a></div></div>
       </div>
       <div class="tl-item">
         <div class="tl-left"><div class="tl-time">17:00</div><div class="tl-dot"></div><div class="tl-line"></div></div>
         <div class="tl-right"><div class="tl-card"><div class="tl-name">🛍 新世界百貨逛逛・退稅辦理</div><div class="tl-desc">3F 外國人服務中心辦會員卡，首次辦卡送 2 杯飲品 🥤，購物享 95 折</div><div class="tl-tags"><span class="tag tag-shop">購物</span><span class="tag tag-shop">退稅</span></div>
-        <a class="map-btn" href="https://maps.app.goo.gl/bZHDYdWdMr2BuZDf9" target="_blank">📍 新世界百貨</a></div></div>
+        <a class="map-btn" href="https://map.naver.com/p/search/%EC%8B%A0%EC%84%B8%EA%B3%84%EB%B0%B1%ED%99%94%EC%A0%90%20%EC%84%BC%ED%85%80%EC%8B%9C%ED%8B%B0%EC%A0%90/place/11619204" target="_blank">📍 新世界百貨</a></div></div>
       </div>
       <div class="tl-item">
         <div class="tl-left"><div class="tl-time">17:30</div><div class="tl-dot coral"></div><div class="tl-line"></div></div>
@@ -686,6 +763,31 @@
 <!-- ② 交通 -->
 <div class="section" id="sec-transport">
   <div class="section-title">🚇 交通攻略</div>
+
+  <div class="card" style="background:linear-gradient(135deg, #1A5C8A 0%, #2E7DB5 100%);border:none;color:white">
+    <div class="card-title" style="color:white">✈️ 航班資訊</div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.2)">
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700">濟州航空 7C 6152（去程）</div>
+        <div style="font-size:12px;opacity:0.85;margin-top:2px">桃園機場 第一航廈 → 金海機場 國際線航廈</div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700">12:00 → 15:30</div>
+        <div style="font-size:11px;opacity:0.8">7/22（三）</div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0">
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700">易斯達航空 ZE 987（回程）</div>
+        <div style="font-size:12px;opacity:0.85;margin-top:2px">金海機場 國際線航廈 → 桃園機場 第一航廈</div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700">22:10 → 00:15</div>
+        <div style="font-size:11px;opacity:0.8">7/25（六）→ 7/26（日）</div>
+      </div>
+    </div>
+  </div>
+
   <div class="info-banner">
     <strong>交通卡建議：T-money 卡 或 WOWPASS</strong><br>
     機場 CU 便利商店購買，儲值後搭地鐵、公車、輕軌都能刷。30 分鐘內轉乘享優惠。<br>
@@ -834,7 +936,7 @@
     <div class="hotel-detail">📅 退房：7/25（六）Check-out（行李寄放到下午）</div>
     <div class="hotel-detail">🍳 早餐：附贈，每天吃！</div>
     <div style="margin-top:12px">
-      <a class="map-btn" href="https://maps.app.goo.gl/U8gSJgqBdUL1cqZa8" target="_blank" style="background:rgba(255,255,255,0.25);border:1px solid rgba(255,255,255,0.4)">📍 飯店位置</a>
+      <a class="map-btn" href="https://naver.me/F2ZbDfjE" target="_blank" style="background:rgba(255,255,255,0.25);border:1px solid rgba(255,255,255,0.4)">📍 飯店位置</a>
     </div>
   </div>
   <div class="card">
@@ -842,29 +944,296 @@
     <div class="transport-row">
       <div class="transport-icon">🗼</div>
       <div class="transport-info"><div class="transport-route">釜山塔・龍頭山公園</div><div class="transport-detail">步行 10 分鐘</div></div>
-      <a class="map-btn" href="https://maps.app.goo.gl/ZKqcXsA1rAnJVf4P7" target="_blank" style="align-self:center;padding:5px 10px;font-size:11px">導航</a>
+      <a class="map-btn" href="https://naver.me/GbDFYSR5" target="_blank" style="align-self:center;padding:5px 10px;font-size:11px">導航</a>
     </div>
     <div class="transport-row">
       <div class="transport-icon">🐟</div>
       <div class="transport-info"><div class="transport-route">札嘎其海鮮市場</div><div class="transport-detail">步行 15 分鐘</div></div>
-      <a class="map-btn" href="https://maps.app.goo.gl/E4Ss3CwRiuuHhqcB9" target="_blank" style="align-self:center;padding:5px 10px;font-size:11px">導航</a>
+      <a class="map-btn" href="https://map.naver.com/p/search/%EC%9E%90%EA%B0%88%EC%B9%98%EC%8B%9C%EC%9E%A5/place/11582217" target="_blank" style="align-self:center;padding:5px 10px;font-size:11px">導航</a>
     </div>
     <div class="transport-row">
       <div class="transport-icon">🎬</div>
       <div class="transport-info"><div class="transport-route">BIFF廣場</div><div class="transport-detail">步行 10 分鐘</div></div>
-      <a class="map-btn" href="https://maps.app.goo.gl/r1EqAr2kSzMGzc5b9" target="_blank" style="align-self:center;padding:5px 10px;font-size:11px">導航</a>
+      <a class="map-btn" href="https://naver.me/FDnCfOLW" target="_blank" style="align-self:center;padding:5px 10px;font-size:11px">導航</a>
     </div>
     <div class="transport-row">
       <div class="transport-icon">🛒</div>
       <div class="transport-info"><div class="transport-route">樂天超市光復店</div><div class="transport-detail">步行 15 分鐘</div></div>
-      <a class="map-btn" href="https://maps.app.goo.gl/X9VSSBMaH6hWEjFo7" target="_blank" style="align-self:center;padding:5px 10px;font-size:11px">導航</a>
+      <a class="map-btn" href="https://map.naver.com/p/search/%EB%A1%AF%EB%8D%B0%EB%A7%88%ED%8A%B8%20%EA%B4%91%EB%B3%B5%EC%A0%90/place/11625524" target="_blank" style="align-self:center;padding:5px 10px;font-size:11px">導航</a>
     </div>
   </div>
   <div class="card">
     <div class="card-title">⚠️ 重要提醒</div>
     <div class="remind-item"><div class="remind-icon">🧳</div><div>7/25 退房後，行李寄放在飯店前台，下午去 Spa Land 前記得回來取行李再去機場</div></div>
     <div class="remind-item"><div class="remind-icon">💳</div><div>東橫INN 通常需要信用卡 or 現金 Check-in 時押金，請備妥</div></div>
-    <div class="remind-item"><div class="remind-icon">🔑</div><div>中央站出口離飯店步行約 5–8 分鐘，Google Map 導航即可</div></div>
+    <div class="remind-item"><div class="remind-icon">🔑</div><div>中央站出口離飯店步行約 5–8 分鐘，Naver Map 導航即可</div></div>
+  </div>
+</div>
+
+<!-- 美食地圖 -->
+<div class="section" id="sec-food">
+  <div class="section-title">🍽 美食地圖</div>
+
+  <div class="region-select-wrap">
+    <select id="food-region" class="region-select" onchange="filterFood(this.value)">
+      <option value="all">🍜 全部地區</option>
+      <option value="haeundae">🌊 青沙浦・海雲台</option>
+      <option value="gwangalli">🌉 廣安里・金蓮山</option>
+      <option value="nampo">🏙 南浦洞・中央</option>
+      <option value="busanstation">🚉 釜山站・草梁</option>
+      <option value="seomyeon">🛍 西面・釜田</option>
+      <option value="gamcheon">🎨 甘川文化村</option>
+      <option value="far">🚗 較遠地區</option>
+    </select>
+  </div>
+
+  <div id="food-list">
+
+    <!-- 青沙浦・海雲台 -->
+    <div class="food-card" data-region="haeundae">
+      <div class="tl-card">
+        <div class="tl-name">🥗 앨리스 사라다（沙拉船）</div>
+        <div class="tl-desc">IG瘋傳的沙拉船，青沙浦海景配沙拉，適合當輕食或下午茶</div>
+        <div class="tl-desc" style="margin-top:4px;color:var(--muted)">📍 부산 해운대구 청사포로 128번길 22 1층</div>
+        <a class="map-btn" href="https://naver.me/xxoyvIuB" target="_blank">📍 Naver Map 導航</a>
+      </div>
+    </div>
+    <div class="food-card" data-region="haeundae">
+      <div class="tl-card">
+        <div class="tl-name">🍡 호랑이젤라떡（海雲台麻糬）</div>
+        <div class="tl-desc">海雲台超人氣麻糬甜點</div>
+        <a class="map-btn" href="https://naver.me/GeURWn5w" target="_blank">📍 Naver Map 導航</a>
+      </div>
+    </div>
+    <div class="food-card" data-region="haeundae">
+      <div class="tl-card">
+        <div class="tl-name">🐟 해목 해운대점（海雲台鰻魚飯）</div>
+        <div class="tl-desc">炭火鰻魚飯，海雲台在地人氣店</div>
+        <a class="map-btn" href="https://naver.me/5HkaI55U" target="_blank">📍 Naver Map 導航</a>
+      </div>
+    </div>
+
+    <!-- 廣安里・金蓮山 -->
+    <div class="food-card" data-region="gwangalli">
+      <div class="tl-card">
+        <div class="tl-name">🍢 쫀득네모네（吉拿棒）</div>
+        <div class="tl-desc">廣安海邊路超人氣吉拿棒，邊走邊吃看海超讚</div>
+        <div class="tl-desc" style="margin-top:4px;color:var(--muted)">📍 부산 광안해변로 199 3층</div>
+        <a class="map-btn" href="https://naver.me/xjYjwQI6" target="_blank">📍 Naver Map 導航</a>
+      </div>
+    </div>
+    <div class="food-card" data-region="gwangalli">
+      <div class="tl-card highlight">
+        <div class="tl-name">🥩 석화연 부산 광안 본점（海邊烤肉）</div>
+        <div class="tl-desc">Seokhwayeon，廣安里本店，邊烤肉邊看廣安大橋夜景</div>
+        <div class="tl-desc" style="margin-top:4px;color:var(--muted)">📍 부산 수영구 광안해변로 199 201호 ・ 0507-1335-3397</div>
+        <a class="map-btn coral-btn" href="https://naver.me/IGJyFn0R" target="_blank">📍 Naver Map 導航</a>
+      </div>
+    </div>
+    <div class="food-card" data-region="gwangalli">
+      <div class="tl-card">
+        <div class="tl-name">🥢 동방명주 東方明珠（中華料理）</div>
+        <div class="tl-desc">金蓮山站1號出口步行5-8分鐘，道地中華料理</div>
+        <div class="tl-desc" style="margin-top:4px;color:var(--muted)">📍 부산 수영구 남천바다로 31 ・ 051-753-8885</div>
+        <a class="map-btn" href="https://naver.me/5Rh09eAK" target="_blank">📍 Naver Map 導航</a>
+      </div>
+    </div>
+    <div class="food-card" data-region="gwangalli">
+      <div class="tl-card highlight">
+        <div class="tl-name">🦀 홍게데이（紅蟹吃到飽）</div>
+        <div class="tl-desc">廣안里附近6樓，紅蟹吃到飽，附辣冷麵、炒飯、火鍋湯、泡菜無限續加，可看廣安大橋夜景</div>
+        <div class="tl-tags"><span class="tag tag-food">吃到飽</span></div>
+        <a class="map-btn coral-btn" href="https://map.naver.com/p/search/%ED%99%8D%EA%B2%8C%EB%8D%B0%EC%9D%B4%20%EA%B4%91%EC%95%88%EB%A6%AC" target="_blank">📍 Naver Map 導航</a>
+      </div>
+    </div>
+
+    <!-- 南浦洞・中央 -->
+    <div class="food-card" data-region="nampo">
+      <div class="tl-card highlight">
+        <div class="tl-name">🦀 참바다대게 남포동본점（帝王蟹）</div>
+        <div class="tl-desc">必吃！帝王蟹吃到飽，已排進 Day1 行程</div>
+        <a class="map-btn coral-btn" href="https://map.naver.com/p/search/%EC%B0%B8%EB%B0%94%EB%8B%A4%EB%8C%80%EA%B2%8C%20%EB%82%A8%ED%8F%AC%EB%8F%99%EB%B3%B8%EC%A0%90/place/37683771" target="_blank">📍 Naver Map 導航</a>
+      </div>
+    </div>
+    <div class="food-card" data-region="nampo">
+      <div class="tl-card">
+        <div class="tl-name">🍓 쿠오리노（草莓蛋糕）</div>
+        <div class="tl-desc">南浦洞人氣草莓蛋糕甜點店</div>
+        <a class="map-btn" href="https://naver.me/5r9zurO1" target="_blank">📍 Naver Map 導航</a>
+      </div>
+    </div>
+    <div class="food-card" data-region="nampo">
+      <div class="tl-card">
+        <div class="tl-name">🍚 밀양돼지국밥（密陽家豬肉湯飯）南浦洞店</div>
+        <div class="tl-desc">連鎖豬肉湯飯名店，南浦洞分店</div>
+        <a class="map-btn" href="https://naver.me/FdCxB2VO" target="_blank">📍 Naver Map 導航</a>
+      </div>
+    </div>
+
+    <!-- 釜山站・草梁 -->
+    <div class="food-card" data-region="busanstation">
+      <div class="tl-card">
+        <div class="tl-name">🍚 밀양돼지국밥（密陽家豬肉湯飯）釜山站店</div>
+        <div class="tl-desc">連鎖豬肉湯飯名店，釜山站分店</div>
+        <a class="map-btn" href="https://naver.me/GlJIfKQJ" target="_blank">📍 Naver Map 導航</a>
+      </div>
+    </div>
+    <div class="food-card" data-region="busanstation">
+      <div class="tl-card highlight">
+        <div class="tl-name">🌶 초량원조불백（辣炒豬肉）</div>
+        <div class="tl-desc">Day6 隊長推薦！草梁在地辣炒豬肉名店</div>
+        <a class="map-btn coral-btn" href="https://naver.me/5ssTlrFx" target="_blank">📍 Naver Map 導航</a>
+      </div>
+    </div>
+
+    <!-- 西面・釜田 -->
+    <div class="food-card" data-region="seomyeon">
+      <div class="tl-card">
+        <div class="tl-name">🍔 부전떡갈비（釜田站煎漢堡排）</div>
+        <div class="tl-desc">釜田站韓式煎漢堡排（떡갈비）</div>
+        <a class="map-btn" href="https://naver.me/5nejH4DR" target="_blank">📍 Naver Map 導航</a>
+      </div>
+    </div>
+    <div class="food-card" data-region="seomyeon">
+      <div class="tl-card highlight">
+        <div class="tl-name">🥩 83해치（釜山最強燒肉）</div>
+        <div class="tl-desc">位在西面，據說是釜山最強燒肉</div>
+        <a class="map-btn coral-btn" href="https://naver.me/G58gLMg2" target="_blank">📍 Naver Map 導航</a>
+      </div>
+    </div>
+    <div class="food-card" data-region="seomyeon">
+      <div class="tl-card">
+        <div class="tl-name">🥩 전포 연향（烤肉）</div>
+        <div class="tl-desc">看起來不錯的烤肉店，位在全浦洞</div>
+        <a class="map-btn" href="https://naver.me/5Hka4E0K" target="_blank">📍 Naver Map 導航</a>
+      </div>
+    </div>
+
+    <!-- 甘川文化村 -->
+    <div class="food-card" data-region="gamcheon">
+      <div class="tl-card">
+        <div class="tl-name">🍪 Bada Sand（蜂蜜奶油夾心餅）甘川文化村店</div>
+        <div class="tl-desc">釜山超人氣伴手禮，甘川文化村逛街時順路帶</div>
+        <div class="tl-tags"><span class="tag tag-shop">伴手禮</span></div>
+        <a class="map-btn" href="https://naver.me/FytULnrN" target="_blank">📍 Naver Map 導航</a>
+      </div>
+    </div>
+
+    <!-- 較遠地區 -->
+    <div class="food-card" data-region="far">
+      <div class="tl-card transport">
+        <div class="tl-name">🥩 올바로갈비 화명직영점（烤肉）</div>
+        <div class="tl-desc">評價不錯，但位在北區花明站，離主行程較遠不順路</div>
+        <div class="tl-tags"><span class="tag tag-transport">⚠️ 較遠</span></div>
+        <a class="map-btn" href="https://naver.me/GbADLPck" target="_blank">📍 Naver Map 導航</a>
+      </div>
+    </div>
+    <div class="food-card" data-region="far">
+      <div class="tl-card transport">
+        <div class="tl-name">🍖 부산쪽쪽갈비 본점（釜山烤肋排）</div>
+        <div class="tl-desc">釜山知名烤肋排，但地點較遠不順路</div>
+        <div class="tl-tags"><span class="tag tag-transport">⚠️ 較遠</span></div>
+        <a class="map-btn" href="https://naver.me/5PVaSE2z" target="_blank">📍 Naver Map 導航</a>
+      </div>
+    </div>
+    <div class="food-card" data-region="far">
+      <div class="tl-card transport">
+        <div class="tl-name">🍚 영진돼지국밥 본점（豬肉湯飯）</div>
+        <div class="tl-desc">位在沙下區，較偏僻不順路</div>
+        <div class="tl-tags"><span class="tag tag-transport">⚠️ 較遠</span></div>
+        <a class="map-btn" href="https://naver.me/G7V4KKhm" target="_blank">📍 Naver Map 導航</a>
+      </div>
+    </div>
+    <div class="food-card" data-region="far">
+      <div class="tl-card transport">
+        <div class="tl-name">🍞 칠암사계（麵包店）</div>
+        <div class="tl-desc">位在機張郡，非常偏僻，需特別安排交通才能到</div>
+        <div class="tl-tags"><span class="tag tag-transport">⚠️ 較遠</span></div>
+        <a class="map-btn" href="https://naver.me/FSw7KjJ6" target="_blank">📍 Naver Map 導航</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 景點總覽 -->
+<div class="section" id="sec-sights">
+  <div class="section-title">🗺 景點總覽</div>
+
+  <div class="card">
+    <div class="tl-card highlight" style="border:none;padding:0;background:none">
+      <div class="tl-name">🌃 황령산 봉수대（荒嶺山夜景）</div>
+      <div class="tl-desc">IG瘋傳的釜山夜景秘境，可俯瞰整個釜山市區＋廣安大橋，開車或搭計程車上山最方便</div>
+      <div class="tl-desc" style="margin-top:4px;color:var(--muted)">📍 부산 부산진구 전포동 50-1</div>
+      <div class="tl-tags"><span class="tag tag-sight">夜景推薦</span></div>
+      <a class="map-btn coral-btn" href="https://naver.me/xPUptvtD" target="_blank">📍 Naver Map 導航</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📅 Day1・南浦洞</div>
+    <div class="transport-row">
+      <div class="transport-icon">🗼</div>
+      <div class="transport-info"><div class="transport-route">釜山塔・龍頭山公園</div><div class="transport-detail">夜景＋煙火投影秀 20:00–22:00</div></div>
+      <a class="map-btn" href="https://naver.me/GbDFYSR5" target="_blank" style="align-self:center;padding:5px 10px;font-size:11px">導航</a>
+    </div>
+    <div class="transport-row">
+      <div class="transport-icon">🎬</div>
+      <div class="transport-info"><div class="transport-route">BIFF廣場</div><div class="transport-detail">小吃、逛街</div></div>
+      <a class="map-btn" href="https://naver.me/FDnCfOLW" target="_blank" style="align-self:center;padding:5px 10px;font-size:11px">導航</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📅 Day2・海雲台</div>
+    <div class="transport-row">
+      <div class="transport-icon">📸</div>
+      <div class="transport-info"><div class="transport-route">청사포 天空步道</div><div class="transport-detail">紅白燈塔、平交道打卡</div></div>
+      <a class="map-btn" href="https://map.naver.com/p/search/%EC%B2%AD%EC%82%AC%ED%8F%AC%EB%8D%B0%ED%81%AC/place/37493400" target="_blank" style="align-self:center;padding:5px 10px;font-size:11px">導航</a>
+    </div>
+    <div class="transport-row">
+      <div class="transport-icon">🏖</div>
+      <div class="transport-info"><div class="transport-route">海雲台海水浴場</div><div class="transport-detail">海灘散步</div></div>
+      <a class="map-btn" href="https://map.naver.com/p/search/%ED%95%B4%EC%9A%B4%EB%8C%80%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5/place/11583195" target="_blank" style="align-self:center;padding:5px 10px;font-size:11px">導航</a>
+    </div>
+    <div class="transport-row">
+      <div class="transport-icon">🌉</div>
+      <div class="transport-info"><div class="transport-route">廣安里海灘</div><div class="transport-detail">廣安大橋海景</div></div>
+      <a class="map-btn" href="https://map.naver.com/p/search/%EA%B4%91%EC%95%88%EB%A6%AC%ED%95%B4%EB%B3%80/place/11583199" target="_blank" style="align-self:center;padding:5px 10px;font-size:11px">導航</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📅 Day3・甘川・松島・影島</div>
+    <div class="transport-row">
+      <div class="transport-icon">🎨</div>
+      <div class="transport-info"><div class="transport-route">甘川洞文化村</div><div class="transport-detail">彩色山城拍照</div></div>
+      <a class="map-btn" href="https://map.naver.com/p/search/%EA%B0%90%EC%B2%9C%EB%8F%99%EB%AC%B8%ED%99%94%EB%A7%88%EC%9D%84/place/11527806" target="_blank" style="align-self:center;padding:5px 10px;font-size:11px">導航</a>
+    </div>
+    <div class="transport-row">
+      <div class="transport-icon">🚡</div>
+      <div class="transport-info"><div class="transport-route">松島海上纜車</div><div class="transport-detail">透明底艙，釜山Pass可用</div></div>
+      <a class="map-btn" href="https://map.naver.com/p/search/%EC%86%A1%EB%8F%84%ED%95%B4%EC%83%81%EC%BC%80%EC%9D%B4%EB%B8%94%EC%B9%B4/place/13177831" target="_blank" style="align-self:center;padding:5px 10px;font-size:11px">導航</a>
+    </div>
+    <div class="transport-row">
+      <div class="transport-icon">🌉</div>
+      <div class="transport-info"><div class="transport-route">松島龍宮雲橋</div><div class="transport-detail">免費天空步道</div></div>
+      <a class="map-btn" href="https://map.naver.com/p/search/%EC%86%A1%EB%8F%84%EC%9A%A9%EA%B6%81%EA%B5%AC%EB%A6%84%EB%8B%A4%EB%A6%AC/place/1095638191" target="_blank" style="align-self:center;padding:5px 10px;font-size:11px">導航</a>
+    </div>
+    <div class="transport-row">
+      <div class="transport-icon">☕</div>
+      <div class="transport-info"><div class="transport-route">白淺灘文化村</div><div class="transport-detail">海景藝術村，咖啡廳放空</div></div>
+      <a class="map-btn" href="https://map.naver.com/p/search/%ED%9D%B0%EB%82%98%EB%A3%A8%EB%AC%B8%ED%99%94%EB%A7%88%EC%9D%84/place/37493399" target="_blank" style="align-self:center;padding:5px 10px;font-size:11px">導航</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📅 Day4・Centum City</div>
+    <div class="transport-row">
+      <div class="transport-icon">🧖</div>
+      <div class="transport-info"><div class="transport-route">新世界 Spa Land</div><div class="transport-detail">頂級汗蒸幕，釜山Pass可用</div></div>
+      <a class="map-btn" href="https://map.naver.com/p/search/%EC%8B%A0%EC%84%B8%EA%B3%84%20%EC%8A%A4%ED%8C%8C%EB%9E%9C%EB%93%9C%20%EC%84%BC%ED%85%80%EC%8B%9C%ED%8B%B0/place/33995138" target="_blank" style="align-self:center;padding:5px 10px;font-size:11px">導航</a>
+    </div>
   </div>
 </div>
 
@@ -906,9 +1275,6 @@
       </div>
       <div class="pack-item" onclick="togglePack(this)">
         <div class="pack-check"></div><span class="pack-emoji">👟</span><span class="pack-text">舒適好走的鞋（甘川洞坡路多）</span>
-      </div>
-      <div class="pack-item" onclick="togglePack(this)">
-        <div class="pack-check"></div><span class="pack-emoji">👙</span><span class="pack-text">泳衣（海雲台可以玩水）</span>
       </div>
     </div>
 
@@ -969,89 +1335,121 @@
   </div>
 </div>
 
-<!-- ⑤ 預算 -->
+<!-- ⑤ 匯率計算機 -->
 <div class="section" id="sec-budget">
-  <div class="section-title">💰 旅遊預算</div>
-  <div class="budget-total">
-    <div class="budget-label">每人總預算（不含機票住宿）</div>
-    <div class="budget-amount">NT$10,000</div>
-    <div class="budget-label">5人合計約 NT$50,000</div>
+  <div class="section-title">💱 匯率計算機</div>
+
+  <div class="budget-total" style="padding:20px">
+    <div class="budget-label" style="font-size:13px;margin-bottom:6px">固定匯率</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:#4AAEDC;line-height:1">₩1,000 = NT$46</div>
+    <div class="budget-label" style="margin-top:4px">韓幣 → 台幣</div>
   </div>
 
-  <div class="card">
-    <div class="card-title">📊 每人費用明細估算</div>
-    <div class="budget-row">
-      <div class="budget-cat">🍽 餐飲（4天全部）</div>
-      <div class="budget-val">NT$3,500–4,500</div>
+  <!-- KRW → TWD -->
+  <div class="card" style="margin-bottom:12px">
+    <div class="card-title">🇰🇷 韓幣 → 台幣</div>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+      <div style="flex:1;position:relative">
+        <input id="krw-input" type="number" inputmode="numeric" placeholder="輸入韓幣金額"
+          style="width:100%;padding:14px 48px 14px 16px;border:1.5px solid var(--border);border-radius:12px;font-size:18px;font-family:'Space Grotesk',sans-serif;color:var(--ink);background:var(--page-bg);outline:none;-webkit-appearance:none"
+          oninput="calcKRW()" onfocus="this.style.borderColor='var(--sea)'" onblur="this.style.borderColor='var(--border)'">
+        <span style="position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:16px;color:var(--muted);font-weight:600">₩</span>
+      </div>
     </div>
-    <div class="budget-row">
-      <div class="budget-cat">🚇 交通（地鐵+公車）</div>
-      <div class="budget-val">NT$600–700</div>
+    <div style="background:var(--wave-blue);border-radius:12px;padding:16px;text-align:center">
+      <div style="font-size:12px;color:var(--muted);margin-bottom:4px">換算結果</div>
+      <div id="twd-result" style="font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;color:var(--sea)">NT$ —</div>
     </div>
-    <div class="budget-row">
-      <div class="budget-cat">🎫 景點門票</div>
-      <div class="budget-val">NT$1,500–2,000</div>
-    </div>
-    <div class="budget-row">
-      <div class="budget-cat">🚢 遊艇</div>
-      <div class="budget-val">NT$600–800</div>
-    </div>
-    <div class="budget-row">
-      <div class="budget-cat">🧖 Spa Land</div>
-      <div class="budget-val">NT$420–520</div>
-    </div>
-    <div class="budget-row">
-      <div class="budget-cat">☕ 小吃・咖啡・零食</div>
-      <div class="budget-val">NT$800–1,000</div>
-    </div>
-    <div class="budget-row" style="font-weight:700">
-      <div class="budget-cat" style="color:var(--ink);font-weight:700">💡 旅遊合計</div>
-      <div class="budget-val" style="color:var(--sea)">NT$7,420–9,520</div>
-    </div>
-    <div class="budget-row" style="background:#FEF9EC;border-radius:8px;padding:10px;margin-top:4px;border-bottom:none">
-      <div class="budget-cat">🛍 剩餘購物預算</div>
-      <div class="budget-val" style="color:var(--coral)">NT$480–2,580</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+      <button class="quick-btn" onclick="setKRW(10000)">₩1萬</button>
+      <button class="quick-btn" onclick="setKRW(50000)">₩5萬</button>
+      <button class="quick-btn" onclick="setKRW(100000)">₩10萬</button>
+      <button class="quick-btn" onclick="setKRW(500000)">₩50萬</button>
     </div>
   </div>
 
-  <div class="card">
-    <div class="card-title">🎫 釜山 Pass 值得買嗎？</div>
-    <div class="info-banner" style="margin-bottom:0">
-      你們行程包含：<strong>海岸列車 ✅ 松島纜車 ✅ 釜山塔 ✅</strong><br><br>
-      單買門票約 NT$1,600–2,000/人，<strong>釜山 Pass 48 小時版</strong>通常 NT$800–1,000 左右就包含這些，<strong>強烈建議購買！</strong><br><br>
-      → 在 KLOOK 或 KKDAY 出發前購買，通常比現場便宜 15%
+  <!-- TWD → KRW -->
+  <div class="card" style="margin-bottom:12px">
+    <div class="card-title">🇹🇼 台幣 → 韓幣</div>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+      <div style="flex:1;position:relative">
+        <input id="twd-input" type="number" inputmode="numeric" placeholder="輸入台幣金額"
+          style="width:100%;padding:14px 52px 14px 16px;border:1.5px solid var(--border);border-radius:12px;font-size:18px;font-family:'Space Grotesk',sans-serif;color:var(--ink);background:var(--page-bg);outline:none;-webkit-appearance:none"
+          oninput="calcTWD()" onfocus="this.style.borderColor='var(--coral)'" onblur="this.style.borderColor='var(--border)'">
+        <span style="position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:16px;color:var(--muted);font-weight:600">NT$</span>
+      </div>
+    </div>
+    <div style="background:#FFF8F6;border:1px solid #F5C6BB;border-radius:12px;padding:16px;text-align:center">
+      <div style="font-size:12px;color:var(--muted);margin-bottom:4px">換算結果</div>
+      <div id="krw-result" style="font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;color:var(--coral)">₩ —</div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+      <button class="quick-btn coral-quick" onclick="setTWD(500)">NT$500</button>
+      <button class="quick-btn coral-quick" onclick="setTWD(1000)">NT$1,000</button>
+      <button class="quick-btn coral-quick" onclick="setTWD(3000)">NT$3,000</button>
+      <button class="quick-btn coral-quick" onclick="setTWD(5000)">NT$5,000</button>
     </div>
   </div>
 
+  <!-- 常見消費對照 -->
   <div class="card">
-    <div class="card-title">💱 換匯建議</div>
-    <div class="remind-item"><div class="remind-icon">✅</div><div>建議在台灣銀行或機場換好部分韓幣（每人至少 ₩200,000）</div></div>
-    <div class="remind-item"><div class="remind-icon">💡</div><div>釜山機場輕軌站旁有 MONEY BOX 自助換錢機，匯率比機場大廳好很多，營業 06:00–21:00</div></div>
-    <div class="remind-item"><div class="remind-icon">💡</div><div>南浦洞光復路有大量民間換錢所，匯率通常是最好的，建議留一些在南浦洞換</div></div>
-    <div class="remind-item"><div class="remind-icon">💳</div><div>大部分景點、餐廳、百貨可刷 Visa/Master，市場小攤位才需現金</div></div>
+    <div class="card-title">🧾 常見消費參考</div>
+    <div class="budget-row"><div class="budget-cat">🚇 地鐵一次</div><div class="budget-val">₩1,400 ≈ NT$64</div></div>
+    <div class="budget-row"><div class="budget-cat">🍜 刀削麵一碗</div><div class="budget-val">₩12,000 ≈ NT$552</div></div>
+    <div class="budget-row"><div class="budget-cat">🥤 便利商店飲料</div><div class="budget-val">₩2,000 ≈ NT$92</div></div>
+    <div class="budget-row"><div class="budget-cat">🚃 海岸列車</div><div class="budget-val">₩12,000 ≈ NT$552</div></div>
+    <div class="budget-row"><div class="budget-cat">🚡 松島纜車（透明）</div><div class="budget-val">₩18,000 ≈ NT$828</div></div>
+    <div class="budget-row"><div class="budget-cat">🧖 Spa Land（週六）</div><div class="budget-val">₩22,000 ≈ NT$1,012</div></div>
+    <div class="budget-row"><div class="budget-cat">🚢 遊艇</div><div class="budget-val">₩30,000 ≈ NT$1,380</div></div>
+    <div class="budget-row" style="border-bottom:none"><div class="budget-cat">🦀 帝王蟹吃到飽（每人估）</div><div class="budget-val">₩50,000 ≈ NT$2,300</div></div>
   </div>
 </div>
 
-<!-- BOTTOM NAV -->
-<nav class="bottom-nav">
-  <button class="nav-btn active" onclick="showSection('itinerary', this)">
-    <span class="icon">📅</span><span class="label">每日行程</span>
-  </button>
-  <button class="nav-btn" onclick="showSection('transport', this)">
-    <span class="icon">🚇</span><span class="label">交通</span>
-  </button>
-  <button class="nav-btn" onclick="showSection('hotel', this)">
-    <span class="icon">🏨</span><span class="label">住宿</span>
-  </button>
-  <button class="nav-btn" onclick="showSection('packing', this)">
-    <span class="icon">🧳</span><span class="label">行李</span>
-  </button>
-  <button class="nav-btn" onclick="showSection('budget', this)">
-    <span class="icon">💰</span><span class="label">預算</span>
-  </button>
-</nav>
 
 <script>
+  const RATE = 46; // ₩1000 = NT$46
+
+  function calcKRW() {
+    const krw = parseFloat(document.getElementById('krw-input').value);
+    const el = document.getElementById('twd-result');
+    if (isNaN(krw) || krw === 0) { el.textContent = 'NT$ —'; return; }
+    const twd = (krw / 1000 * RATE).toFixed(0);
+    el.textContent = 'NT$ ' + Number(twd).toLocaleString();
+  }
+
+  function calcTWD() {
+    const twd = parseFloat(document.getElementById('twd-input').value);
+    const el = document.getElementById('krw-result');
+    if (isNaN(twd) || twd === 0) { el.textContent = '₩ —'; return; }
+    const krw = Math.round(twd / RATE * 1000);
+    el.textContent = '₩ ' + krw.toLocaleString();
+  }
+
+  function setKRW(val) {
+    document.getElementById('krw-input').value = val;
+    calcKRW();
+  }
+
+  function setTWD(val) {
+    document.getElementById('twd-input').value = val;
+    calcTWD();
+  }
+
+  function filterFood(region) {
+    document.querySelectorAll('.food-card').forEach(card => {
+      if (region === 'all' || card.dataset.region === region) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  function jumpToTransport() {
+    const btn = document.querySelectorAll('.nav-btn')[1]; // 交通 is 2nd nav button
+    showSection('transport', btn);
+  }
+
   function showSection(id, btn) {
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
     document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
